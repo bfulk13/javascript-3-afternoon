@@ -96,14 +96,11 @@ function double(obj){
 */
 
 //Code Here
-function secrets(obj){
+function secrets(myObj){
   let emptyStr = ``;
-  for(let key in obj){
-    let strArray = Object.getOwnPropertyNames(obj);
-    for(let i=0; i<strArray; i++){
-      if(strArray.charAt(0) === `s` && strArray.charAt(1) === `h`){
-        emptyStr += emptyStr.push(obj[key] + ` `)
-      }
+  for(let key in myObj){
+    if(key.startsWith(`sh`)){
+      emptyStr += myObj[key]
     }
   }
   // console.log(emptyStr)
@@ -141,7 +138,10 @@ function secrets(obj){
 */
 
 //Code Here
-
+function removePassword(obj){
+  delete obj.password;
+  return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -160,6 +160,13 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+
+for(let prop in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[prop] > 100){
+    delete deleteTheBigNumbers[prop];
+  }
+}
+
 
 
 
