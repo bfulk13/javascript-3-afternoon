@@ -198,12 +198,8 @@ class Machine {
   reboot(){
     this.wear_and_tear -= 10
     this.needs_reboot = false
-    rebootComplete()
   }
   
-  rebootComplete(){
-    
-  }
 
 }
 
